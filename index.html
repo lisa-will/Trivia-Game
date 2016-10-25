@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Bring It On! JavaScript Trivia!</title>
+
+	<!-- Link to reset.css || styles.css \\ bootstrap cdn. --> 
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css">
+
+</head>
+
+<body>
+<!-- Container --> 
+<div class="container">
+<h2>JavaScript Trivia!</h2> 
+<!-- Let's Add a Modal -->
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Learn More</button><br><br>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal Content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Test Your JavaScript Skills!</h4>
+        </div>
+        <div class="modal-body">
+          <p>That's Right! Test those JS Skills!</p>
+          <p>You will be racing against the clock, answering as many questions correctly as possible.</p>
+          <p>The more you answer correctly, the higher your score!</p>
+          <p>The more you answer wrong... the more you should study.</p>
+          <p>Good Luck Chuck!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">PLAY</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Progress bar for fun! -->
+<div class="progress progress-striped active">
+	<div id="myBar">
+  		<div class="progress-bar" style="width: 40%"></div>
+  	</div>	
+</div>
+
+<!-- Annnnd a stopwatch-clock glyphicon for fun too. --> 
+<a href="#" class="btn btn-danger btn-lg">
+          <span class="glyphicon glyphicon-time"></span>  00:00
+    </a>
+<!-- Add a few default panels here and there for styling purposes! --> 
+<div class="panel panel-default">
+	<div class="panel-heading">
+
+<!-- Add div #triviaStatus - this will tell the tester what question # they are on out of total # of game questions. -->
+		<h6 id="triviaStatus">Question # Test</h6>
+	</div>
+  		<div class="panel-body">
+  			<div id="trivia"</div>
+    		TRIVIA CONTENT TEST!
+  			</div>
+		</div>
+
+
+<!-- Link Scripts -->
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="assets/javascript/app.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</body>
+</html>
