@@ -6,7 +6,7 @@
 function startTimer(duration, display){
 	var timer = duration, minutes, seconds;
 	setInterval(function (){
-		minutes = parseInt(timer / 60, 10)
+		minutes = parseInt(timer / 60, 10);
 		seconds = parseInt(timer % 60, 10);
 
 		minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -21,29 +21,33 @@ function startTimer(duration, display){
 	}, 1000);
 }
 
-window.onload = function (){
+function startTrivia(){
 	var fiveMinutes = 60 * 5, 
 		display = document.querySelector('#time');
 	startTimer(fiveMinutes, display);	
 };
 
+$("#startTrivia").on("click", function(){
+	startTrivia();
+})
+
 // Progress bar function to show tester trivia progress... 
 
 // * Still needs some work. 
 
-$(document).ready(function() {
-	var progression = 0, 
-	progress = setInterval(function() 
-	{
+updateProgressBar(5)
+var progression = 0;
+
+function updateProgressBar(progress) { 
 		$('#progress .progress-text').text(progression + '%');
 		$('#progress .progress-bar').css({'width': progression+'%'});
 		if(progression == 100) {
-			clearInterval(progress);
-		} else
-			progression += 10;
+			var progression = 0
+		} else {
+			progression += progress;
+		}
 
-	}, 1000);
-});
+};
 
 
 
@@ -63,7 +67,7 @@ var q = 0, trivia, triviaStatus, question, choice, choices, ansA, ansB, ansC, an
 
 var triviaQuestions = [
 //Q1 
-	["Blah Blah Blah", "A", "B", "C", "D", "A"],
+	["assets/images/1.png", "A", "B", "C", "D", "A"],
 //Q2
 	["Blah Blah Blah", "A. Method", "B. Variable", "C. Object", "D. Function", "D"],
 //Q3
@@ -81,7 +85,7 @@ function _(x) {
 }
 // This renderQuestion function pulls the question + answer choices from the triviaQuestions array. 
 function renderQuestion() {
-	trivia = _("trivia");
+	trivia = $("#trivia");
 // This will tally up number of answer right! 
 	if(q >= triviaQuestions.length)	{
 		trivia.innerHTML = "<h2>You got "+correct+" of "+triviaQuestions+" questions correct!</h2>";
@@ -98,7 +102,7 @@ function renderQuestion() {
 	ansC = triviaQuestions[q][3];
 	ansD = triviaQuestions[q][4];
 // This displays the trivia question. 
-	trivia.innerHTML = "<h3>"+question+"</h3";
+	trivia.innerHTML = "<img src='"+question+"'>";
 // This displays answer selections with "radio-style" button.
 	trivia.innerHTML += "<input type='radio' name='choices' value='A'> "+ansA+"<br>";
 	trivia.innerHTML += "<input type='radio' name='choices' value='B'> "+ansB+"<br>";
