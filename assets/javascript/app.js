@@ -1,7 +1,7 @@
 // Test Your Javascript skills!! 
 // Let's start by adding the timer! Yay!! 
 
-// Add "Start Trivia" button function. 
+// * Add "Start Trivia" button function. 
 
 function startTimer(duration, display){
 	var timer = duration, minutes, seconds;
@@ -29,7 +29,7 @@ window.onload = function (){
 
 // Progress bar function to show tester trivia progress... 
 
-// Still needs some work. 
+// * Still needs some work. 
 
 $(document).ready(function() {
 	var progression = 0, 
@@ -48,7 +48,16 @@ $(document).ready(function() {
 
 
 // Let's Add our Trivia Variables.... Annnnd Go! 
-// Add Trivia-Q' images. 
+// * Add Trivia-Q' images. 
+
+// Add function ...
+/* $(document).ready(function() {
+ 	 var triviaQ =  ['assets/images/1.png',
+ 					'assets/images/2.png',
+ 					'assets/images/3.png',
+ 					'assets/images/4.png',
+ 					'assets/images/5.png',
+ 					'assets/images/6.png',]; */
 
 var q = 0, trivia, triviaStatus, question, choice, choices, ansA, ansB, ansC, ansD, correct, wrong = 0; 
 
