@@ -18,7 +18,10 @@
 <h2>JavaScript Trivia!</h2> 
 <!-- Let's Add a Modal -->
 <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Learn More</button><br><br>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Learn More</button>
+
+<!-- Trigger the Game + Timer with THIS "Start" Button ??? -->
+<button type="button" class="btn btn-success btn-lg" data-toggle="start" data-target="#startTrivia">START TRIVIA</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -48,14 +51,17 @@
 
 <!-- Progress bar for fun! -->
 <div class="progress progress-striped active">
-	<div id="myBar">
-  		<div class="progress-bar" style="width: 40%"></div>
+	<div id="progress">
+  		<span class="progress-text"></span>
+  		<div class="progress-bar"></div>
   	</div>	
 </div>
 
-<!-- Annnnd a stopwatch-clock glyphicon for fun too. --> 
-<a href="#" class="btn btn-danger btn-lg">
-          <span class="glyphicon glyphicon-time"></span>  00:00
+<!-- Annnnd a stopwatch-clock glyphicon with the countdown! --> 
+<a href="#" class="btn btn-danger btn-lg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; width: 142px;">
+          <div><span class="glyphicon glyphicon-time"></span>
+          <span id="time">05:00</span></div>
+        
     </a>
 <!-- Add a few default panels here and there for styling purposes! --> 
 <div class="panel panel-default">

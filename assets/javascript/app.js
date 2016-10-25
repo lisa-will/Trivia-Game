@@ -1,24 +1,70 @@
 // Test Your Javascript skills!! 
+// Let's start by adding the timer! Yay!! 
 
-// Let's Add our Variables.... Annnnd Go! 
+// Add "Start Trivia" button function. 
+
+function startTimer(duration, display){
+	var timer = duration, minutes, seconds;
+	setInterval(function (){
+		minutes = parseInt(timer / 60, 10)
+		seconds = parseInt(timer % 60, 10);
+
+		minutes = minutes < 10 ? "0" + minutes : minutes;
+		seconds = seconds < 10 ? "0" + seconds : seconds;
+
+		display.textContent = minutes + ":" + seconds;
+
+		if (--timer < 0) {
+			timer = duration;
+
+		}
+	}, 1000);
+}
+
+window.onload = function (){
+	var fiveMinutes = 60 * 5, 
+		display = document.querySelector('#time');
+	startTimer(fiveMinutes, display);	
+};
+
+// Progress bar function to show tester trivia progress... 
+
+// Still needs some work. 
+
+$(document).ready(function() {
+	var progression = 0, 
+	progress = setInterval(function() 
+	{
+		$('#progress .progress-text').text(progression + '%');
+		$('#progress .progress-bar').css({'width': progression+'%'});
+		if(progression == 100) {
+			clearInterval(progress);
+		} else
+			progression += 10;
+
+	}, 1000);
+});
+
+
+
+// Let's Add our Trivia Variables.... Annnnd Go! 
+// Add Trivia-Q' images. 
 
 var q = 0, trivia, triviaStatus, question, choice, choices, ansA, ansB, ansC, ansD, correct, wrong = 0; 
+
 var triviaQuestions = [
 //Q1 
-	["What is i++?", "A. Incrementor", "B. Operator", "C. Iterator", "D. Decrementor", "A"],
+	["Blah Blah Blah", "A", "B", "C", "D", "A"],
 //Q2
-	//["Which built-in method reserves the order of the elements in an array?"
-	 //"A. changeOrder(order)", "B. reserve()", "C. sort(order)", "D. charCodeAt()", "A"],
+	["Blah Blah Blah", "A. Method", "B. Variable", "C. Object", "D. Function", "D"],
 //Q3
-	["Which of the options below are data types?", 
-	"A. Number, String, Function", "B. String, Boolean, Data", "C. Boolean, Number, Sting", "D. Number, String, Boolean", "D"],
-//Q4	
-	//["var dogName = dog["name"] is an example of:", 
-	//"A. Object Literal Notation", "B. Bracket Notation", "C. Dot Notation", "D. Object Literal Notation", "B"],
-//Q5	
-	["In the function below, what does the text '(w,l)' represent? var area = function (w,l) { return w*l;};", 
-	"A. Variables", "B. Parameters", "C. Strings", "D. Object", "B"],
 
+//Q4	
+	
+//Q5
+
+
+	
 ];
 // This function returns the element Id when it is called. 
 function _(x) {
@@ -51,17 +97,15 @@ function renderQuestion() {
 	trivia.innerHTML += "<input type='radio' name='choices' value='D'> "+ansD+"<br><br>";
 	trivia.innerHTML += "<button onclick='checkAnswer()'>Sumbit Answer</button>";
 }
-//****** Add progress bar function to show tester trivia progress... duh. 
-//function move()
 
 function checkAnswer() {
 	choices = document.getElementsByName("choices");
 	for (var i = 0; i < choices.length; i++) {
 		if(choices[i].checked) {
-			choices = choices[i].value;
+			choice = choices[i].value;
 		}
 	}
-	// This evalutes if tester chose the correct choice answer as listed in array of triviaQ's and keeping track of how many tester gets correct.
+	// This evaluates if tester chose the correct choice answer as listed in array of triviaQ's and keeping track of how many tester gets correct.
 	if (choice == triviaQuestions[q][5]){
 		correct++; 
 	}
@@ -75,7 +119,7 @@ function checkAnswer() {
 	renderQuestion();
 
 // This code fires off the questions as soon as the page loads! 
-window.addEventListener('load', renderQuestion, false);
+window.addEventListener("load", renderQuestion, false);
 
 }
 
