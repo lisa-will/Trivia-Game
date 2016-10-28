@@ -25,16 +25,14 @@ function startTrivia(){
 	var fiveMinutes = 60 * 5, 
 		display = document.querySelector('#time');
 	startTimer(fiveMinutes, display);	
-};
+}
 
 $("#startTrivia").on("click", function(){
 	startTrivia();
 	renderQuestion();
-})
+});
 
 // Progress bar function to show tester trivia progress... 
-
-// * Still needs some work. 
 
 var progression = 0;
 
@@ -46,14 +44,9 @@ function updateProgressBar() {
 		} else {
 			progression += 5;
 		}
+}
 
-};
-
-
-
-// Let's Add our Trivia Variables.... Annnnd Go! 
-// * Add Trivia-Q' images. 
-
+// Let's Add our Trivia Variables + Trivia-Q' images.... Annnnd Go! 
 
 var q = 0, trivia, triviaStatus, question, choice, choices, ansA, ansB, ansC, ansD, correct, wrong = 0; 
 
@@ -100,9 +93,9 @@ var triviaQuestions = [
 	["assets/images/20.png", "A", "B", "C", "D", "B"],		
 ];
 // This function returns the element Id when it is called. 
-//function _(x) {
-	//return document.getElementById(x);
-//}
+function _(x) {
+	return document.getElementById(x);
+}
 // This renderQuestion function pulls the question + answer choices from the triviaQuestions array. 
 function renderQuestion() {
 	trivia = $("#trivia");
@@ -130,7 +123,7 @@ function renderQuestion() {
 	trivia.append("<input type='radio' name='choices' value='D'> "+ansD+"<br><br>");
 	trivia.append("<button onclick='checkAnswer()'>Sumbit Answer</button>");
 
-	updateProgressBar()
+	updateProgressBar();
 }
 
 function checkAnswer() {
@@ -161,7 +154,6 @@ window.addEventListener("load", renderQuestion, false);
 
 
 
-
-
-
+//// Still having issues with tallying/displaying total score
+//// Trivia continues to run after answering 20 questions. 
 

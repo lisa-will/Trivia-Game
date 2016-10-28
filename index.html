@@ -14,15 +14,22 @@
 
 <body>
 <!-- Container --> 
-<div class="container">
-<h2>JavaScript Trivia!</h2> 
+<div class="container"><br>
+<h2>JavaScript Trivia!</h2><br>
 <!-- Let's Add a Modal -->
 <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Learn More</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="margin-left: 350px; margin-right: 20px;">Learn More</button>
 
 <!-- Trigger the Game + Timer with THIS "Start" Button ??? -->
-<button type="button" class="btn btn-success btn-lg" id="startTrivia">START TRIVIA</button>
+<button type="button" class="btn btn-success btn-lg" id="startTrivia" style="margin-right: 20px;">START TRIVIA</button>
 
+
+<!-- Annnnd a stopwatch-clock glyphicon with the countdown! --> 
+<button type= "button" class="btn btn-danger btn-lg" style=" width: 142px; margin-right: 20px;">
+          <div><span class="glyphicon glyphicon-time"></span>
+          <span id="time">05:00</span></div>
+</button>
+</div>
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -50,28 +57,24 @@
 </div>
 
 <!-- Progress bar for fun! -->
-<div class="progress progress-striped active">
+<br>
+<div class="progress progress-striped active" style="width: 700px; margin-left: 250px;">
 	<div id="progress">
   		<span class="progress-text"></span>
   		<div class="progress-bar"></div>
   	</div>	
 </div>
-
-<!-- Annnnd a stopwatch-clock glyphicon with the countdown! --> 
-<a href="#" class="btn btn-danger btn-lg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; width: 142px;">
-          <div><span class="glyphicon glyphicon-time"></span>
-          <span id="time">05:00</span></div>
-        
-    </a>
+    
 <!-- Add a few default panels here and there for styling purposes! --> 
-<div class="panel panel-default">
+<div class="panel panel-default" style="width: 700px; margin-left: 250px;">
+	<div id="triviaHeader">
 	<div class="panel-heading">
 
 <!-- Add div #triviaStatus - this will tell the tester what question # they are on out of total # of game questions. -->
 		<h6 id="triviaStatus">Question # Test</h6>
 	</div>
   		<div class="panel-body">
-  			<div id="trivia">
+  			<div id="trivia" style="margin-left: 30px;">
     		TRIVIA CONTENT TEST!
   			</div>
 		</div>

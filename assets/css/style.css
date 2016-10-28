@@ -1,20 +1,31 @@
 /* GET WILD AND CRAZZZZZZY WITH STYLEZZZZZ */ 
 
 body {
+	margin-left: auto;
+	margin-right: auto;
 	width: 900px;
 	background-image: url("bk.jpg");
-	background-repeat: no-repeat;
+	background-size: 1200px;
+	background-repeat: repeat-y;
+	background-position: margin-top 25px;
+
 }
 
 .container {
 	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
 	
+}
+h2 {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 #pic {
-	width: 400px;
+	width: 600px;
 	height: 400px;
-	
 }
 
 #progress {
@@ -34,3 +45,9 @@ body {
 	z-index: 2;
 	right: 0;
 }
+.panel-body{
+	size: 700px;
+
+}
+
+
